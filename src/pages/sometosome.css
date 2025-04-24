@@ -8,7 +8,7 @@
   height: 100vh;
   background-color: #000;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  color: #FEDFCB;       /* light peach */
+  color: #FEDFCB;
   overflow: hidden;
   position: relative;
 }
@@ -34,14 +34,13 @@
   transition: color 0.3s, transform 0.3s;
   opacity: 0.8;
 }
-/* alternate grey & peach for a pop-art feel */
 .sts-left .sts-word:nth-child(3n+1) { color: #FEDFCB; }
 .sts-left .sts-word:nth-child(3n+2) { color: #444; }
 .sts-left .sts-word:nth-child(3n+3) { color: #FEDFCB; }
 
 .sts-left .sts-word:hover {
   transform: scale(1.2);
-  color: #FF3D00;       /* bright red */
+  color: #FF3D00;
   opacity: 1;
 }
 
@@ -58,7 +57,6 @@
   padding: 0 1rem;
 }
 
-/* big block text */
 .sts-title {
   font-size: 8vw;
   line-height: 0.9;
@@ -69,7 +67,6 @@
   color: #FEDFCB;
 }
 
-/* cursive overlay “the” */
 .sts-highlight {
   font-family: 'Great Vibes', cursive;
   font-size: 12vw;
@@ -83,7 +80,6 @@
   opacity: 0.8;
 }
 
-/* tickets container */
 .sts-tickets {
   position: absolute;
   bottom: 12%;
@@ -94,14 +90,12 @@
   z-index: 3;
 }
 
-/* ticket images */
 .sts-ticket {
   width: 10vw;
   max-width: 160px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-/* scatter & rotate each one */
 .tc-1 { transform: rotate(-12deg) translate(-2vw, 1vw); }
 .tc-2 { transform: rotate(6deg)  translate(0vw, -1vw); }
 .tc-3 { transform: rotate(-4deg) translate(3vw, 2vw); }
@@ -110,7 +104,6 @@
   transform: scale(1.1) rotate(0deg);
 }
 
-/* main CTA */
 .sts-cta {
   position: absolute;
   bottom: 4%;
@@ -139,7 +132,6 @@
   position: relative;
 }
 
-/* Event info block */
 .sts-schedule {
   position: absolute;
   top: 15%;
@@ -181,7 +173,6 @@
   font-weight: bold;
 }
 
-/* Glowing crosshair grid */
 .sts-crosshair {
   position: absolute;
   bottom: 12%;
@@ -200,7 +191,6 @@
   opacity: 0.5;
   transition: all 0.3s ease;
 }
-/* center dot glows red */
 .sts-crosshair div:nth-child(5) {
   background-color: #FF3D00;
   opacity: 1;
@@ -213,7 +203,10 @@
 /* ——————————————————————————————————————————————— */
 /* Responsive: stack on mobile */
 @media (max-width: 768px) {
-  .sts-wrapper { flex-direction: column; height: auto; }
+  .sts-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
 
   .sts-left {
     width: 100%;
@@ -223,6 +216,7 @@
     gap: 0.5rem;
     padding: 1rem;
   }
+
   .sts-left .sts-word {
     writing-mode: horizontal-tb;
     font-size: 0.7rem;
@@ -232,7 +226,11 @@
     width: 100%;
     padding: 2rem 1rem;
   }
-  .sts-title { font-size: 12vw; }
+
+  .sts-title {
+    font-size: 12vw;
+  }
+
   .sts-highlight {
     font-size: 18vw;
     top: 50%;
@@ -245,7 +243,11 @@
     gap: 1rem;
     margin-top: 2rem;
   }
-  .sts-ticket { width: 40vw; max-width: 200px; }
+
+  .sts-ticket {
+    width: 40vw;
+    max-width: 200px;
+  }
 
   .sts-cta {
     position: static;
@@ -257,11 +259,13 @@
     width: 100%;
     padding: 1.5rem;
   }
+
   .sts-schedule {
     position: static;
     text-align: center;
     margin-bottom: 2rem;
   }
+
   .sts-crosshair {
     position: static;
     margin: 0 auto;
@@ -269,5 +273,18 @@
     grid-template-columns: repeat(3, 15px);
     grid-template-rows: repeat(3, 15px);
   }
-  .sts-crosshair div { width: 15px; height: 15px; }
+
+  .sts-crosshair div {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ——————————————————————————————————————————————— */
+/* Optional: accessibility for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
