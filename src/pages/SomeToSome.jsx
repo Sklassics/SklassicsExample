@@ -17,7 +17,7 @@ const words = [
 
 const tickets = [ticket1, ticket2, ticket3];
 
-const SomeToSome = () => (
+export const SomeToSome = () => (
   <div className="sts-wrapper">
     <nav className="sts-left">
       {words.map((w, i) => (
