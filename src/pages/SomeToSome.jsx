@@ -1,5 +1,5 @@
 import React from 'react';
-import './someToSome.css';
+import './sometosome.css';
 
 import ticket1 from '../assets/ticket1.png';
 import ticket2 from '../assets/ticket2.png';
