@@ -1,0 +1,115 @@
+.sklassics-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-item {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Central Man Image */
+.center-man {
+  width: 80vw;
+  max-width: 1000px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Banana - Top Left */
+.overlay-top-left {
+  width: 12vw;
+  max-width: 100px;
+  top: 40%;
+  left: 13%;
+  z-index: 2;
+  transform: rotate(-20deg);
+  animation: fadeSlideLeft 1.2s ease-out forwards, float 3s ease-in-out infinite;
+  animation-delay: 0.5s, 1.5s;
+}
+
+/* Soup - Bottom Right */
+.overlay-top-right {
+  width: 10vw;
+  max-width: 100px;
+  bottom: 8%;
+  right: 13%;
+  z-index: 2;
+  transform: rotate(10deg);
+  animation: fadeSlideRight 1.2s ease-out forwards, slowRotate 6s linear infinite;
+  animation-delay: 0.8s, 2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .center-man {
+    width: 90vw;
+  }
+
+  .overlay-top-left,
+  .overlay-top-right {
+    width: 15vw;
+  }
+}
+
+/* Entrance Animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-30deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-20deg) scale(1);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) rotate(20deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(10deg) scale(1);
+  }
+}
+
+/* Continuous Animation Effects */
+@keyframes float {
+  0% { transform: translateY(0) rotate(-20deg); }
+  50% { transform: translateY(-10px) rotate(-20deg); }
+  100% { transform: translateY(0) rotate(-20deg); }
+}
+
+@keyframes slowRotate {
+  0% { transform: rotate(10deg); }
+  100% { transform: rotate(370deg); }
+}

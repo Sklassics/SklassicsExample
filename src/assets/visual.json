@@ -1,0 +1,21 @@
+[
+    {
+      "id": "sklassics",
+      "alt": "sklassics-image",
+      "src": "src/assets/man.jpg",
+      "className": "sklassics"
+    },
+    {
+      "id": "banana",
+      "alt": "sk-banana",
+      "src": "src/assets/image.png",
+      "className": "banana"
+    },
+    {
+      "id": "tomato",
+      "alt": "sk-tomato",
+      "src": "src/assets/tomato.jpg",
+      "className": "tomato"
+    }
+  ]
+  

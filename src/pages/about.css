@@ -1,0 +1,42 @@
+.about-container
+{
+ width: 100vw;
+ height: 40vh;
+ background-color: black;
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center;
+ position: relative;
+ overflow: hidden;
+ padding: 2rem;
+ box-sizing: border-box;
+padding-top: -30px;
+}
+.tube
+{
+    width: 220px;
+    height: auto;
+    z-index: 2;
+    object-fit: contain;
+}
+.about-info
+{
+ font-family: 'Courier New', Courier, monospace;
+ z-index: 3;
+ color: white;
+}
+.about-info p {
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  .about-info strong {
+    font-size: 1.8rem;
+    font-weight: 900;
+    display: block;
+  }
+  .about-info span {
+    opacity: 0.6;
+    font-size: 0.9rem;
+  }
+    

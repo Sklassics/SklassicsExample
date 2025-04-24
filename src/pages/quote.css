@@ -1,0 +1,89 @@
+.quote-container{
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #fbe6dc;
+}
+.quote-inner
+{
+    max-width: 900px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif; 
+}
+.quote-main
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1.4;
+    text-transform: uppercase;
+}
+.animated-text
+{
+ position: relative;
+ display: inline-block;
+ font-weight: 600;
+ animation: fadeInHighlight 2s ease-in-out infinite alternate;
+}
+@keyframes fadeInHighlight {
+    from {
+      opacity: 0.5;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+  }
+  
+  .quote-ref {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .book {
+    font-style: normal;
+    color: #999;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .quote-main {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+  
+    .quote-ref {
+      font-size: 0.9rem;
+    }
+}
+.star-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .star {
+    color: red;
+    font-size: 1rem;
+    animation: pulseStar 2s ease-in-out infinite alternate;
+  }
+  
+  .line {
+    flex: 1;
+    height: 2px;
+    background: yellow;
+    opacity: 0.3;
+    position: relative;
+    top: 1px;
+  }
+  

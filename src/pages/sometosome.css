@@ -1,0 +1,273 @@
+/* Import cursive font for the overlay “the” */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* ——————————————————————————————————————————————— */
+/* Main wrapper */
+.sts-wrapper {
+  display: flex;
+  height: 100vh;
+  background-color: #000;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  color: #FEDFCB;       /* light peach */
+  overflow: hidden;
+  position: relative;
+}
+
+/* ——————————————————————————————————————————————— */
+/* Left: vertical keywords */
+.sts-left {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.sts-left .sts-word {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  opacity: 0.8;
+}
+/* alternate grey & peach for a pop-art feel */
+.sts-left .sts-word:nth-child(3n+1) { color: #FEDFCB; }
+.sts-left .sts-word:nth-child(3n+2) { color: #444; }
+.sts-left .sts-word:nth-child(3n+3) { color: #FEDFCB; }
+
+.sts-left .sts-word:hover {
+  transform: scale(1.2);
+  color: #FF3D00;       /* bright red */
+  opacity: 1;
+}
+
+/* ——————————————————————————————————————————————— */
+/* Center hero */
+.sts-center {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* big block text */
+.sts-title {
+  font-size: 8vw;
+  line-height: 0.9;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  color: #FEDFCB;
+}
+
+/* cursive overlay “the” */
+.sts-highlight {
+  font-family: 'Great Vibes', cursive;
+  font-size: 12vw;
+  color: #FF3D00;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* tickets container */
+.sts-tickets {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2vw;
+  z-index: 3;
+}
+
+/* ticket images */
+.sts-ticket {
+  width: 10vw;
+  max-width: 160px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+/* scatter & rotate each one */
+.tc-1 { transform: rotate(-12deg) translate(-2vw, 1vw); }
+.tc-2 { transform: rotate(6deg)  translate(0vw, -1vw); }
+.tc-3 { transform: rotate(-4deg) translate(3vw, 2vw); }
+
+.sts-ticket:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+
+/* main CTA */
+.sts-cta {
+  position: absolute;
+  bottom: 4%;
+  padding: 0.75rem 2rem;
+  background-color: #FF3D00;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sts-cta:hover {
+  background-color: #E50000;
+  transform: scale(1.05);
+}
+
+/* ——————————————————————————————————————————————— */
+/* Right: event info + glowing grid */
+.sts-right {
+  width: 16%;
+  position: relative;
+}
+
+/* Event info block */
+.sts-schedule {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.sch-item {
+  margin-bottom: 1.5rem;
+  color: #FEDFCB;
+}
+
+.sch-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.sch-arrow {
+  margin-left: 0.5rem;
+  color: #FF3D00;
+}
+
+.sch-text p {
+  margin: 0;
+}
+
+.sch-dots {
+  display: block;
+  letter-spacing: 3px;
+  color: #444;
+}
+
+.sch-country {
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: bold;
+}
+
+/* Glowing crosshair grid */
+.sts-crosshair {
+  position: absolute;
+  bottom: 12%;
+  right: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: repeat(3, 20px);
+  gap: 10px;
+}
+
+.sts-crosshair div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #444;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+/* center dot glows red */
+.sts-crosshair div:nth-child(5) {
+  background-color: #FF3D00;
+  opacity: 1;
+}
+.sts-crosshair div:hover {
+  box-shadow: 0 0 8px #FF3D00;
+  opacity: 1;
+}
+
+/* ——————————————————————————————————————————————— */
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .sts-wrapper { flex-direction: column; height: auto; }
+
+  .sts-left {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .sts-left .sts-word {
+    writing-mode: horizontal-tb;
+    font-size: 0.7rem;
+  }
+
+  .sts-center {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  .sts-title { font-size: 12vw; }
+  .sts-highlight {
+    font-size: 18vw;
+    top: 50%;
+  }
+
+  .sts-tickets {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .sts-ticket { width: 40vw; max-width: 200px; }
+
+  .sts-cta {
+    position: static;
+    margin: 2rem auto 1rem;
+    width: 60%;
+  }
+
+  .sts-right {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .sts-schedule {
+    position: static;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .sts-crosshair {
+    position: static;
+    margin: 0 auto;
+    gap: 8px;
+    grid-template-columns: repeat(3, 15px);
+    grid-template-rows: repeat(3, 15px);
+  }
+  .sts-crosshair div { width: 15px; height: 15px; }
+}

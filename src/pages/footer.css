@@ -1,0 +1,114 @@
+/* footer.css */
+
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: rebeccapurple;
+    color: #FFF;
+    overflow: hidden;
+  }
+  
+  /* Left section: links and description */
+  .footer-link {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 2;
+    max-width: 280px;
+  }
+  .footer-link a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .footer-link .more {
+    font-size: 2rem;
+    line-height: 0.8;
+    cursor: pointer;
+    user-select: none;
+  }
+  .footer-desc {
+    margin-top: 2rem;
+  }
+  .footer-desc p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  
+  /* Floating icons */
+  .float-icon {
+    position: absolute;
+    width: 60px;
+    opacity: 0.8;
+    animation: float 8s ease-in-out infinite alternate;
+  }
+  .icon1 { top: 10%; left: 5%;  animation-delay: 0s; }
+  .icon2 { top: 15%; right: 10%; animation-delay: 2s; }
+  .icon3 { bottom: 20%; left: 20%; animation-delay: 4s; }
+  .icon4 { bottom: 25%; right: 15%; animation-delay: 6s; }
+  .icon5 { top: 50%; left: 80%; animation-delay: 1s; }
+  
+  @keyframes float {
+    0%   { transform: translateY(0)   translateX(0); }
+    50%  { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0)    translateX(0); }
+  }
+  
+  /* Center logo section */
+  .footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .footer-logo {
+    text-align: center;
+  }
+  .logo-back {
+    display: inline-block;
+    padding: 1rem;
+  }
+  .footer-logo img {
+    max-width: 180px;
+    display: block;
+    margin: 0 auto;
+  }
+  .footer-logo .copyright {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+  
+  /* Timeline ticks at bottom */
+  .sts-timeline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    z-index: 1;
+  }
+  .sts-timeline .tick {
+    flex: 1;
+    position: relative;
+    border-left: 1px solid rgba(255,255,255,0.5);
+  }
+  .sts-timeline .tick:first-child { border-left: none; }
+  .sts-timeline .tick::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+  }
+  
