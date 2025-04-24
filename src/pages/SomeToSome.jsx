@@ -66,11 +66,11 @@ const SomeToSome = () => (
           <span className="sch-country">DE</span>
         </div>
       </div>
-      <div className="sts-crosshair">
+      {/* <div className="sts-crosshair">
         <div/><div/><div/>
         <div/><div/><div/>
         <div/><div/><div/>
-      </div>
+      </div> */}
     </aside>
   </div>
 );
