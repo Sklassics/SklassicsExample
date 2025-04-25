@@ -38,7 +38,7 @@ font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 10px;
     text-align: center;
 }
 .nav-item
@@ -47,7 +47,7 @@ font-weight: 500;
 }
 .nav-logo img
 {
-    height: 50px;
+    height: 40px;
     display: block;
 }
 .nav-separator
@@ -67,4 +67,54 @@ font-weight: 500;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
+}
+.company-logo
+{
+    
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 2000;
+  }
+
+  .nav-content {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-content.open {
+    display: flex;
+  }
+
+  .nav-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 }
